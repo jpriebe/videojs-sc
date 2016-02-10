@@ -8,10 +8,16 @@ Download [videojs](http://www.videojs.com/) and [videojs.sc](https://github.com/
 In your web page:
 ```html
 <video id="video" src="movie.mp4" controls></video>
+
+<script src="VisitorAPI.js"></script>
+<script src="AppMeasurement.js"></script>
+<script src="AppMeasurement_Module_Media.js"></script>
+
 <script src="video.js"></script>
-<script src="dist/videojs.sc.min.js"></script>
+<script src="dist/videojs.sc.js"></script>
 <script>
-var s = s_gi ('MY_SUITE_ID');
+var s = new AppMeasurement ();
+s.account = 'MY_SUITE_ID';
 // configuration of s omitted
 
 s.loadModule ('Media')
