@@ -60,6 +60,14 @@
 
 
     function onnewvideo (e) {
+
+      if (_media_info !== null)
+      {
+        // if a new video starts up, and we haven't cleared out the _media_info, we
+        // need to force an "end" event.
+        onended (e);
+      }
+
       _media_info = _on_new_video_cb ();
       _media_name = _media_info.name;
       _media_length = Math.round(this.duration ());
